@@ -1,0 +1,84 @@
+{
+  "name": "guess-the-location",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Rodion K.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RodionCoach/GuessTheLocation"
+  },
+  "engines": {
+    "node": ">=12.13.0",
+    "yarn": ">=1.19.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint ./src"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": "eslint",
+    "**/*.js": "stylelint --config stylelintrc.json",
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "babelMacros": {
+    "styledComponents": {}
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "last 1 edge version",
+      "last 1 opera version"
+    ]
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.3.5",
+    "axios": "^0.19.1",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^5.1.3",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.1",
+    "react-use": "^13.18.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "husky": "^4.0.10",
+    "lint-staged": "^10.0.9",
+    "prettier": "^2.0.2",
+    "source-map-explorer": "^2.4.1",
+    "stylelint": "^13.0.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.9.0"
+  }
+}
