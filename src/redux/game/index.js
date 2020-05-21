@@ -1,15 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { handleActions, createActions } from 'redux-actions';
 
 import initialState, * as handlers from './handlers';
 
-const auth = createSlice({
-  name: 'auth',
-  initialState,
-  reducers: {
-    authenticate: handlers.authenticate,
-  },
+export const actions = createActions({
+  UPDATE_STORAGE: undefined,
 });
 
-export const { actions } = auth;
+const reducer = handleActions(new Map([[actions.updateStorage, handlers.updateStorage]]), initialState);
 
-export default auth.reducer;
+export default reducer;

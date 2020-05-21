@@ -1,12 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { createStore } from 'redux';
 
 import rootReducer from './reducers';
 
-const configure = initialState =>
-  configureStore({
-    reducer: rootReducer,
-    devTools: true,
-    ...(initialState ? { initialState } : {}),
-  });
+const configure = initalState =>
+  createStore(
+    rootReducer,
+    initalState,
+    // eslint-disable-next-line no-underscore-dangle
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  );
 
 export default configure;
