@@ -10,7 +10,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     height: 100%;
-    font-display: swap;
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #2c3e50;
   }
 
   body {

@@ -1,13 +1,24 @@
 const initialState = {
-  kmLeft: localStorage.getItem('kmLeft') || null,
-  currentCity: localStorage.getItem('currentCity') || null,
-  guessedCities: localStorage.getItem('guessedCities') || null,
-  newGame: localStorage.getItem('newGame') || false,
-  scores: localStorage.getItem('scores') || [0],
+  kmLeft: null,
+  currentCity: null,
+  guessedCities: null,
+  newGame: false,
+  scores: [],
 };
 
+export const getFromStorage = state => ({
+  ...state,
+  ...JSON.parse(localStorage.getItem('state')),
+});
+
 export const updateStorage = (state, { payload }) => {
-  Object.keys(payload).forEach(item => localStorage.setItem(`${item}`, `${payload[item]}`));
+  localStorage.setItem(
+    'state',
+    JSON.stringify({
+      ...state,
+      ...payload,
+    }),
+  );
   return {
     ...state,
     ...payload,

@@ -6,11 +6,14 @@ export const Modal = styled.div`
   width: 100%;
   height: 100%;
   z-index: 4;
+  display: flex;
+  align-items: center;
 `;
 
 export const Label = styled.div`
-  margin: 25% auto;
+  margin: 0 auto;
   background-color: white;
+  width: 100%;
 
   :hover {
     cursor: pointer;
