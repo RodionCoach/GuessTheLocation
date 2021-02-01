@@ -1,4 +1,4 @@
-# react-starter
+# react-small-game
 
 Bootstrapped with https://github.com/facebook/create-react-app
 
@@ -15,3 +15,5 @@ cp .env_example .env
 yarn
 yarn start
 ```
+[Try it](https://guess-location-eu.herokuapp.com/play)
+
